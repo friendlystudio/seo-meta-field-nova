@@ -8,7 +8,7 @@
                 class="btn btn-primary btn-default"
                 @click="showSeoPreviews = !showSeoPreviews"
                 v-if="hasSeo"
-            >{{ showSeoPreviews ? 'Hide' : 'Show' }} Náhled SEO</button>
+            >{{ showSeoPreviews ? 'Skrýt' : 'Zobrazit' }} náhled SEO</button>
             <div class="seo-meta-detail__previews" v-if="showSeoPreviews && hasSeo">
                 <div class="seo-meta-detail__wrapper">
                     <div class="seo-meta-detail__wrapper__label">Google</div>
