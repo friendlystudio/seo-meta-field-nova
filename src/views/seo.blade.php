@@ -17,6 +17,10 @@ if(!empty($seo['params'])){
     }
 
 }
+
+if(empty($seo['image_path']) && isset($page) && method_exists($page, 'getSeoImageDefault')) {
+    $seo['image_path'] = $page->getSeoImageDefault();
+}
 @endphp
 
 <title>{{ $seo['title'] }}</title>
