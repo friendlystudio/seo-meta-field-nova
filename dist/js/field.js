@@ -28758,7 +28758,8 @@ var render = function() {
               },
               [
                 _vm._v(
-                  _vm._s(_vm.showSeoPreviews ? "Hide" : "Show") + " Náhled SEO"
+                  _vm._s(_vm.showSeoPreviews ? "Skrýt" : "Zobrazit") +
+                    " náhled SEO"
                 )
               ]
             )
