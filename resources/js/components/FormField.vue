@@ -2,13 +2,13 @@
     <default-field :field="field" :errors="errors">
         <template slot="field">
             <div class="form-group mb-3">
-                <label class="mb-1 block">Title:</label>
+                <label class="mb-1 block">Nadpis:</label>
                 <input
                     :id="field.name + '-title'"
                     type="text"
                     class="w-full form-control form-input form-input-bordered"
                     :class="errorClasses"
-                    :placeholder="field.name"
+                    placeholder="Vyplňte SEO nadpis"
                     v-model="value.title"
                     @input="setHasChanged"
                 />
@@ -18,27 +18,27 @@
                 >{{ field.title_format.replace(':text', value.title || '') }}</p>
             </div>
             <div class="form-group mb-3">
-                <label class="mb-1 block">Description:</label>
+                <label class="mb-1 block">Popis:</label>
                 <textarea
                     class="w-full form-control form-input form-input-bordered py-3 h-auto"
                     :id="field.name + '-description'"
-                    placeholder="Enter SEO description"
+                    placeholder="Vyplňte SEO popis"
                     v-model="value.description"
                     @input="setHasChanged"
                 />
             </div>
             <div class="form-group mb-3">
-                <label class="mb-1 block">Keywords:</label>
+                <label class="mb-1 block">Klíčová slova:</label>
                 <textarea
                     class="w-full form-control form-input form-input-bordered py-3 h-auto"
                     :id="field.name + '-keywords'"
-                    placeholder="Enter SEO keywords"
+                    placeholder="Vyplňte SEO klíčová slova"
                     v-model="value.keywords"
                     @input="setHasChanged"
                 />
             </div>
-            <div class="form-group mb-3">
-                <label class="mb-1 block">Follow:</label>
+            <div class="form-group mb-3" style="display: none">
+                <label class="mb-1 block">Meta tag robots:</label>
                 <select-control
                     :id="field.name + '-follow'"
                     v-model="value.follow_type"
@@ -54,7 +54,7 @@
                 </select-control>
             </div>
             <div class="form-group mb-3">
-                <label class="mb-1 block">Image:</label>
+                <label class="mb-1 block">Obrázek:</label>
                 <seo-media
                     :value="field.image_url"
                     :file="imageFile"

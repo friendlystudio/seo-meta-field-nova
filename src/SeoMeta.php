@@ -77,7 +77,8 @@ class SeoMeta extends Field
         }
 
         if ($this->value && $this->value->image) {
-            $meta['image_url'] = Storage::url($this->value->image);
+            // $meta['image_url'] = Storage::url($this->value->image);
+            $meta['image_url'] = strpos($this->value->image, '//') === false ? Storage::url($this->value->image) : $this->value->image;
         }
         $this->withMeta($meta);
     }
